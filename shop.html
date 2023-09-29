@@ -1,0 +1,311 @@
+<!--<?php
+session_start();
+$count=0;
+if(isset($_SESSION['cart'])){
+    $count=count($_SESSION['cart']);
+  }
+
+?>
+-->
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="shop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <style>
+        #logoutlink{
+            display:none;
+        }
+        #loginlink{
+            display:block;
+        }
+        #cartlink{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Custom Confirm Box-->
+    <div id="confirmbox">
+        <form id="confirmboxform">
+            <label>Could not find any results.</label><br><br>
+            <button id="confirmbtn" onclick="confirmclick(); return false;">OK</button>
+        </form>
+    </div>
+
+
+
+    <div id="nav">
+        <a class="navlinks" HREF="index.html">HOME</a>
+        <a class="navlinks" href="about.html">ABOUT US</a>
+        <a class="navlinks" id="cartlink" href="cart.html"><i class="fa-solid fa-cart-shopping">
+        <!--(<?php echo $count;?>)--></i></a>
+        <a class="navlinks" href="signup.html" id="signuplink">SIGN UP</a>
+        <a class="navlinks" href="login.html" id="loginlink">SIGN IN</a>
+        <a class="navlinks" href="destroysession.php" id="logoutlink">LOG OUT</a>
+    </div>
+    <div class="searchdiv">
+    <form>
+        <button class="searchicon" type="submit" onclick="searchFunc();return false;">
+        <i class="fa-solid fa-magnifying-glass"></i></button>
+        
+        <input type="text" id="search" placeholder="Search" 
+        onkeydown>
+    </form>
+    </div>
+
+
+    <!--Wrapper div for responsive products section-->
+    <div class="wrapper">
+
+        <h1>Welcome to GetFit Store</h1>
+        <div id="container">
+            <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img2.png" >
+                <h3>Dumbbells</h3>
+                <p style="font-size: 18px;">Price: ₹1799</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="BARBELLS">
+                <input type="hidden" name="price" value="1799">
+                </form>
+                </div>
+
+                 <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img3.png" >
+                <h3>Barbell Rods with Plates</h3>
+                <p style="font-size: 18px;">Price: ₹2799</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="Barbell Rods with Plates">
+                <input type="hidden" name="price" value="2799">
+                </form>
+                </div>
+                <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img4.png" >
+                <h3>Pullup Machine</h3>
+                <p style="font-size: 18px;">Price: ₹11,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="PULLUP MACHINE">
+                <input type="hidden" name="price" value="11999">
+                </form>
+                </div>
+                <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img5.png" >
+                <h3>Treadmill</h3>
+                <p style="font-size: 18px;">Price: ₹34,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="TREADMILL">
+                <input type="hidden" name="price" value="34999">
+                </form>
+                 </div>
+                <div class="box">
+                <<form action="store.php" method="POST">
+                <img src="img6.png" >
+                <h3>Spin Bike</h3>
+                <p style="font-size: 18px;">Price: ₹15,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="SPIN BIKE">
+                <input type="hidden" name="price" value="15999">
+                </form>
+                </div>
+                <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img7.png" >
+                <h3>Rowing Machine</h3>
+                <p style="font-size: 18px;">Price: ₹13,499</p>
+                <p>Inclusive of all taxes</p>
+               <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="ROWING MACHINE">
+                <input type="hidden" name="price" value="13499"></form>
+            </div>
+            <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img8.png" >
+                <h3>Bench Flat</h3>
+                <p style="font-size: 18px;">Price: ₹8,499</p>
+                <p>Inclusive of all taxes</p>
+               <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="BENCH FLAT">
+                <input type="hidden" name="price" value="8499">
+            </form>
+            </div>
+            <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img9.png" >
+                <h3>Bench Multipurpose</h3>
+                <p style="font-size: 18px;">Price: ₹6,999</p>
+                <p>Inclusive of all taxes</p>
+               <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="BENCH MULTIPURPOSE">
+                <input type="hidden" name="price" value="6999">
+            </form>
+            </div>
+            <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img10.png" >
+                <h3>Bench Inclined</h3>
+                <p style="font-size: 18px;">Price: ₹12,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="BENCH INCLINED">
+                <input type="hidden" name="price" value="12999">
+            </form>
+            </div>
+            <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img11.png" >
+                <h3>Leg Extension Machine</h3>
+                <p style="font-size: 18px;">Price: ₹15,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="LEG EXTENSION MACHINE">
+                <input type="hidden" name="price" value="15999">
+            </form>
+            </div>
+            <div class="box">
+            <form action="store.php" method="POST">
+                <img src="img12.png" >
+                <h3>Chest Press Machine</h3>
+                <p style="font-size: 18px;">Price: ₹19,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type=" submit " class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="CHEST PRESS MACHINE">
+                <input type="hidden" name="price" value="19999"></form>
+            </div>
+            <div class="box">
+            <form action="store.php" method="POST">
+                <img src="img13.png" >
+                <h3>Lat Pulldown Machine</h3>
+                <p style="font-size: 18px;">Price: ₹11,500</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="LAT PULL DOWN">
+                <input type="hidden" name="price" value="11500"></form>
+            </div>
+            <div class="box">
+            <form action="store.php" method="POST">
+                <img src="img14.png" >
+                <h3>Rowing Machine High</h3>
+                <p style="font-size: 18px;">Price: ₹25,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="ROWING MACHINE HIGH">
+                <input type="hidden" name="price" value="25999">
+            </form>
+            </div>
+            <div class="box">
+            <form action="store.php" method="POST">
+                <img src="img15.png" >
+                <h3>Bench Decline</h3>
+                <p style="font-size: 18px;">Price: ₹14,999</p>
+                <p>Inclusive of all taxes</p>
+                <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="BENCH DECLINE">
+                <input type="hidden" name="price" value="14999"></form>
+            </div>
+            <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img16.png" >
+                <h3>Leg Press Machine</h3>
+                <p style="font-size: 18px;">Price: ₹16,999</p>
+                <p>Inclusive of all taxes</p>
+               <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="LEG PRESS MACHINE">
+                <input type="hidden" name="price" value="16999"><form>
+                </div>
+                <div class="box">
+                <form action="store.php" method="POST">
+                <img src="img17.png" >
+                <h3>Leg Extension Machine</h3>
+                <p style="font-size: 18px;">Price: ₹24,999</p>
+                <p>Inclusive of all taxes</p>
+               <button type="submit " name="addcart"class="btn">Add To Cart</BUTTON>
+                <input type="hidden" name="itemname" value="LEG EXTENSION MACHINE">
+                <input type="hidden" name="price" value="24999">
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //if enter key is pressed in search-bar it will call searchFunc()
+    document.onkeydown = function(e){
+        if(e.keyCode == 13){
+            searchFunc();
+            return false;
+        }
+    }
+
+
+    //search function to search products from search-bar
+    function searchFunc(){
+        let search_input = document.getElementById('search').value.toUpperCase();
+        let container_div = document.getElementsByClassName('box');
+        let l = document.getElementsByTagName('h3').length;
+        var prod_names = [];
+        let flag = 0;
+        //loop to take values from h3 tag into prod_names array
+        for(var i=0;i<l;i++){
+            prod_names[i] = document.getElementsByTagName('h3')[i];
+            
+            if(prod_names){
+                let name = prod_names[i].textContent.toUpperCase();
+                //indexOf() returns +ve int if searched value is found else -1
+                if(name.indexOf(search_input)>-1){
+                    container_div[i].style.display = "";
+                    flag = 1;
+                }
+                else{
+                    container_div[i].style.display = "none";
+                }
+            }
+        }
+        //if no results are found
+        if(flag==0){
+            let confbox = document.getElementById('confirmbox');
+            confbox.style.display = "block";
+        }
+    }
+
+    //confirm button clicked when no products were found
+    function confirmclick(){
+        document.getElementById('search').value = "";
+        document.getElementById('confirmbox').style.display = "none";
+        searchFunc();
+    }
+
+    //session logic
+   /* var loginlink,logoutlink,signuplink,cartlink;
+    if("<?php echo $_SESSION['username']?>" != ''){
+        loginlink = document.getElementById("loginlink");
+        logoutlink = document.getElementById("logoutlink");
+        signuplink = document.getElementById("signuplink");
+        cartlink = document.getElementById("cartlink");
+        signuplink.style.display = "none";
+        loginlink.style.display = "none";
+        cartlink.style.display = "block";
+        logoutlink.style.display = "block";
+    }
+    else{
+        signuplink = document.getElementById("signuplink");
+        cartlink = document.getElementById("cartlink");
+        loginlink = document.getElementById("loginlink");
+        logoutlink = document.getElementById("logoutlink");
+        cartlink.style.display = "none";
+        signuplink.style.display = "block";
+        loginlink.style.display = "block";
+        logoutlink.style.display = "none";
+    }*/
+</script>
+</html>

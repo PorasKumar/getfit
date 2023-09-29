@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<HEAD >
+	<!--<META HTTP-EQUIV="REFRESH" CONTENT="2">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<TITLE>HOME</TITLE>
+	<STYLE>
+		*{
+			margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+		}
+        #navbar{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            padding:20px 100px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+            opacity: 15;
+            background-color: #0d373bd9;
+            animation: transitionNavbar 2s;
+            animation-timing-function: ease;
+
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("img.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        a{
+            position:relative;
+            font-size: 1em;
+            text-decoration: none;
+            font-weight:500;
+            color:white;
+        }
+        a::after{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:3px;
+            background: #5E8287;
+            border-radius: 5px;
+            left:0;
+            bottom:-6px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+            color:black;
+        }
+        a:hover::after{
+            transform: scaleX(1);
+
+        }
+        #D2{
+            align-items: LEFT;
+            font-size: 60PX;
+            color: yellow;
+            animation: transitiond2 2s;
+            animation-timing-function: ease;
+        }
+        #D2 a{
+            color:yellow;
+            text-decoration: none;
+        }
+		
+
+        #logout{
+            display:none;
+        }
+
+
+        @keyframes transitionNavbar{
+            from{
+                opacity: 0;
+                transform: translateY(-110%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+		@keyframes transitiond2{
+            from{
+                opacity: 0;
+                transform: translateY(50%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+		</STYLE>
+</HEAD>	
+  <!--  <?php
+    session_start();
+        if(isset($_GET['signup'])){
+            echo '<script>alert("Sign Up Successful")</script>';
+        }
+     ?>-->
+
+	<BODY >
+
+	<DIV ID="navbar">
+	<A HREF="index.html">HOME</A>
+	<A HREF="about.html">ABOUT US</A>
+	<A HREF="shop.html">SHOP</A>
+	<A HREF="login.html" id="signin">SIGN IN</A>
+   <!-- <A HREF="destroysession.php" id="logout">LOG OUT</A>-->
+</DIV>
+    
+	<div ID="D2"><BR><BR><BR>
+		GET FIT WITH US <BR>
+        <div id="logelement">
+        <A HREF="signup.html">SIGN UP</A> NOW
+         </div>
+        </div>
+
+	</BODY>
+    <!--
+<script>
+   /* var x  = "<?php echo $_SESSION['username']?>";
+    var signinlink,logoutlink;
+    if(x != ''){
+        var uname = document.getElementById('logelement');
+        uname.textContent = "Welcome "+x;
+        
+        var signinlink = document.getElementById('signin');
+        var logoutlink = document.getElementById('logout');
+        signinlink.style.display = "none";
+        logoutlink.style.display = "block";
+    }
+    else
+    {
+        signinlink.style.display = "block";
+        logoutlink.style.display = "none";
+        var signuplink = document.getElementById('logelement');
+        signuplink.textContent = "Sign Up Now";
+    }*/
+</script>-->
+</HTML>

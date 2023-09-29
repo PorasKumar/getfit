@@ -1,0 +1,82 @@
+<!--<?php session_start(); ?>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="signupandlogin.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div id="form">
+    <form method='POST'>
+        <span><a href="index.html">&times;</a></span>
+        <h1>Login</h1>
+        <input type="email" placeholder="Enter your Email" class="inputs"
+        name="email">
+        <br><br>
+        <input type="password" placeholder="Enter Password" class="inputs"
+        minlength="8" name="pass">
+        <br><br>
+
+        <label style="font-size: 14px;
+        background-color:rgba(255, 0, 0, 0.281);"
+         id="error" >
+       <!-- <?php
+            if(isset($_GET['error'])){
+                echo $_GET['error']."<br>";
+            }
+        ?>-->
+        </label>
+
+        <label>Don't have an account? 
+            <a href="signup.html" ><em>Sign Up<em></a></label>
+        <br><br>
+        <input type="submit" id="submit" value="Login">
+        <br><br>
+    </form>
+</div>
+
+<!--<?php
+    $conn = new mysqli("localhost",'root','','getfit073');
+    $flag=0;
+    if($conn){
+        $result = mysqli_query($conn,"SELECT firstname,email,password from users");
+        if($result->num_rows>0){
+
+            if(isset($_POST['email']) && isset($_POST['pass'])){
+
+                $email = trim($_POST['email']); 
+                $pass = trim($_POST['pass']);
+                if(empty($email)){
+                    $flag=0;
+                    header("Location: login.php?error=Enter valid email id");
+                    exit();
+                }
+                if(empty($pass)){
+                    $flag = 0;
+                    header("Location: login.php?error=Enter your password correctly");
+                    exit();
+                }
+                else{
+                    while($row = $result->fetch_assoc()){
+                        if(($row['email'] == $email) && ($row['password'] == $pass)){
+                            
+                            $_SESSION['username'] = $row['firstname'];
+                            $flag=1;
+                            header("Location: home.php");
+                        }
+                    }
+                    if($flag==0){
+                        header("Location: login.php?error=Enter correct username and password");
+                        exit();
+                    }
+                }
+            }
+        }
+        else{
+            
+        }
+    }
+?>-->
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US</title>
+
+    <style>
+        *{
+			margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+		}
+        body{
+            background-color: #5e8287a2;
+            background: url(img.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #navbar{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            padding:20px 100px;
+            display:flex;
+            justify-content:space-around;
+            align-items: center;
+            z-index: 99;
+            opacity: 15;
+            background-color: #0d373bd9;
+            animation: transitionNavbar 2s;
+            animation-timing-function: ease;
+        }
+        a{
+            position:relative;
+            font-size: 1em;
+            text-decoration: none;
+            font-weight:500;
+            color:white;
+        }
+        a::after{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:3px;
+            background: #5E8287;
+            border-radius: 5px;
+            left:0;
+            bottom:-6px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+            color:black;
+        }
+        a:hover::after{
+            transform: scaleX(1);
+
+        }
+        p{
+            font-size: 20px;
+        }
+        #container{
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap:1em;
+            padding: 20px;
+            animation:transitionCont 3.5s;
+        }
+        #item1{
+            padding:30px;
+            background-color: #0f6870cc;
+            border: black solid 2px;
+            color:azure;
+            width: 75%;
+        }
+        #item2{
+            text-align: center;
+            padding:10px;
+            width: 22%;
+            color:white;
+            position: relative;
+            background-color: #245057ec;
+            height: 380px;
+            border: black solid 2px;
+        }
+        .inputs{
+            border:2px ;
+            background-color: #5E8287;
+            color:white;
+            text-align: left;
+            padding:6px;
+            width: 100%;
+        }
+        .inputs::placeholder{
+              color:#D9D9D9;
+        }
+        .inputs:focus{
+            outline:black solid;
+        }
+        #tarea{
+            border:2px ;
+            background-color: #5E8287;
+            color:white;
+            text-align: left;
+            padding:6px;
+            width: 100%;
+            height: 100px;
+            resize: none;
+        }
+        #tarea::placeholder{
+            color:white;
+        }
+        #tarea:focus{
+            outline:black solid;
+        }
+        #submit{
+            background: black;
+            color:white;
+             border: black solid;
+           padding: 5px;
+           width: 100%;
+            cursor: pointer;
+         }
+          #submit:active{
+        color:white;
+        background-color: rgba(0, 0, 0, 0.637);
+          }
+          #footer{
+            position: fixed;
+            background-color:#0d373bd9;
+            padding: 20px;
+            width: 100%;
+            color:white;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            animation: tranfoot 2s;
+          }
+
+
+
+        
+        @keyframes transitionNavbar{
+            from{
+                opacity: 0;
+                transform: translateY(-110%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @keyframes tranfoot{
+            from{
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @keyframes transitionCont {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    @media (max-width:770px){
+        #container{
+            display:flex;
+            flex-direction: column;
+            padding: 20px;
+            
+        }
+        #item1{
+            width: 100%;
+        }
+        #footer{
+            position: relative;
+        }
+        #item2{
+            align-self: center;
+            width: 100%;
+        }
+        .inputs{
+            width: 100%;
+        }
+        #tarea{
+            width: 100%;
+        }
+        #submit{
+            width: 100%;
+        }
+}
+    </style>
+
+</head>
+<body>
+    <DIV ID="navbar">
+        <A HREF="index.html">HOME</A>
+        <A HREF="shop.html">SHOP</A>
+    </DIV>
+    <br><br><br><br><br><br>
+    <div id="container">
+        <div id="item1">
+            <h1>ABOUT US</h1>
+            <p>This is a website developed for educational purpose. Our Basic
+                goal is to understand how html, css, javascript, php are used to 
+                create a responsive and dynamic website through this project.<br>
+                <br>
+                The structure and designing has been done using html and css,
+                javascript covers the programming logic and client side scripting,
+                and for the back-end sever side scripting php have been used for 
+                signing up a new user and storing the information in the database
+                and to create and destroy session on user login and logout.
+                <br><br>
+                
+            </p>
+        </div>
+        <form id="item2">
+            <label><h2>Contact Us</h2></label><br>
+            <input type="text" placeholder="Enter your name" class="inputs">
+            <br><br>
+            <input type="tel" placeholder="Enter phone number" class="inputs" 
+            maxlength="10">
+            <br><br>
+            <input type="email" placeholder="Enter your email" class="inputs">
+            <br><br>
+            <textarea id="tarea" placeholder="feedback" ></textarea>
+            <br><br>
+            <input type="submit" value="SUBMIT" id="submit"> 
+        </form>
+    </div>
+        <div id="footer">
+            <h3>© 2023 GetFit India, Inc.</h3>
+        </div>
+</body>
+</html>
